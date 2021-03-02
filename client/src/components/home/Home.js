@@ -1,12 +1,22 @@
 import React,{useContext} from 'react'
 
 import {Link} from 'react-router-dom'
+import RoomList from './RoomList'
 
 import {UserContext} from '../../UserContext'
 
 const Home = () => {
 
     const {user,setUser}=useContext(UserContext)
+
+    const rooms=[{
+        name:'room1',
+        _id:'123'
+    },
+    {
+        name:'room2',
+        _id:'456'
+    }]
 
     const setAsJohn=()=>{
         const john={
@@ -49,6 +59,9 @@ const Home = () => {
           <a href="#" onClick={setAsTom}> Set as Tom</a>
         </div>
       </div>
+    </div>
+    <div className="col s6 m5 offset-1">
+        <RoomList rooms={rooms}/>
     </div>
   </div>
            {/* <button onClick={setAsJohn}>set as John</button>
